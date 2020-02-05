@@ -1,5 +1,6 @@
 @Library('test-library@feature/base') _
 
+import com.duvalhub.gitclone.GitCloneRequest
 
 dockerSlave() {
     checkout scm
