@@ -1,3 +1,6 @@
+@Library('test-library@feature/base') _
+
+
 dockerSlave() {
     checkout scm
     env.BASE_DIR = pwd()
