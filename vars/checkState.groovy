@@ -3,8 +3,8 @@ def call() {
     withEnv(["JENKINS_CLI_JAR_PATH=${env.BASE_DIR}/lib/jenkins-cli.jar"]){
         withCredentials([
             usernamePassword(
-                usernameVariable: 'USERNAME',
-                passwordVariable: 'PASSWORD',
+                usernameVariable: 'JENKINS_USER_ID',
+                passwordVariable: 'JENKINS_API_TOKEN',
                 credentialsId: 'continuous-deployment-test-token'
             )
         ]) {
