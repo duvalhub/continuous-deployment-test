@@ -9,7 +9,8 @@ import com.duvalhub.gitclone.GitCloneRequest
 ) Validate that artifact exists on repo
  */
 
-dockerSlave() {
+// dockerSlave() {
+node() {
     checkout scm
     env.BASE_DIR = pwd()
 
