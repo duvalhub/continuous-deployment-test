@@ -1,7 +1,7 @@
 
 @Library(['test-library@feature/base', 'shared-library@feature/multiple-env']) _
 
-//import com.duvalhub.gitclone.GitCloneRequest
+import com.duvalhub.gitclone.GitCloneRequest
 /* 
 ) Clone hello-app on branch develop
 ) Edit file and commit
