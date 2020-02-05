@@ -17,7 +17,14 @@ node() {
     echo "BASE DIR: '${env.BASE_DIR}'"
     sh "ls -l"
 
-    String url = "https://github.com/duvalhub/helloworld-app.git"
+    withCredentials([
+        usernamePassword(
+            usernameVariable: 'USERNAME',
+            passwordVariable: 'PASSWORD',
+            credentialsId: 'GITHUB_SERVICE_ACCOUNT_CREDENTIALS'
+        )
+    ])
+    String url = "https://$USERNAME:$PASSWORD@github.com/duvalhub/helloworld-app.git"
     GitCloneRequest gitCloneRequest = new GitCloneRequest(url)
     gitCloneRequest.toCheckout = "develop"
     gitClone(gitCloneRequest)
