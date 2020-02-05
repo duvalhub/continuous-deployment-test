@@ -1,6 +1,6 @@
 @Library('test-library@feature/base') l2
 
-import com.duvalhub.gitclone.GitCloneRequest
+//import com.duvalhub.gitclone.GitCloneRequest
 
 dockerSlave() {
     checkout scm
@@ -8,12 +8,12 @@ dockerSlave() {
 
     echo "BASE DIR: '${env.BASE_DIR}'"
     // GitClone hello-world
-    String url = "https://github.com/duvalhub/helloworld-app.git"
-    GitCloneRequest gitCloneRequest = new GitCloneRequest(url)
-    gitClone(gitCloneRequest)
+  //  String url = "https://github.com/duvalhub/helloworld-app.git"
+//    GitCloneRequest gitCloneRequest = new GitCloneRequest(url)
+    //gitClone(gitCloneRequest)
 
-    dir(gitCloneRequest.directory) {
-        editFile()
-    }
+//    dir(gitCloneRequest.directory) {
+        //editFile()
+   // }
 
 }
