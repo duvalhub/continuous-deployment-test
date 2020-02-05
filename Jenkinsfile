@@ -16,7 +16,6 @@ dockerSlave() {
     echo "BASE DIR: '${env.BASE_DIR}'"
     sh "ls -l"
 
-    GitClone hello-world
     String url = "https://github.com/duvalhub/helloworld-app.git"
     GitCloneRequest gitCloneRequest = new GitCloneRequest(url)
     gitCloneRequest.toCheckout = "develop"
