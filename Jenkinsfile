@@ -26,6 +26,9 @@ dockerSlave() {
         editFile()
     }
 
-    
+    checkState()
+
+    String cli_script = ""
+
 
 }
