@@ -1,4 +1,5 @@
-@Library('test-library@feature/base') l2
+
+@Library(['test-library@feature/base', 'shared-library@feature/multiple-env']) _
 
 //import com.duvalhub.gitclone.GitCloneRequest
 
