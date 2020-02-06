@@ -24,7 +24,7 @@ node() {
             credentialsId: 'GITHUB_SERVICE_ACCOUNT_CREDENTIALS'
         )
     ]) {
-        String url = "https://$USERNAME:$PASSWORD@github.com/duvalhub/helloworld-app.git"
+        String url = "https://$USERNAME:$PASSWORD@github.com/duvalhub/continuous-deployment-test-app.git"
         GitCloneRequest gitCloneRequest = new GitCloneRequest(url)
         gitCloneRequest.toCheckout = "develop"
         gitClone(gitCloneRequest)
