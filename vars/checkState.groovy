@@ -1,4 +1,4 @@
-import com.duvalhub.continuousdeploymenttest.Trace
+import com.duvalhub.continuousdeploymenttest.trace.Trace
 
 def call(Trace trace) {
     String script = "${env.BASE_DIR}/scripts/checkFile/checkFile.sh"

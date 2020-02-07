@@ -2,7 +2,7 @@
 @Library(['test-library@feature/base', 'shared-library@feature/multiple-env']) _
 
 import com.duvalhub.gitclone.GitCloneRequest
-import com.duvalhub.continuousdeploymenttest.Trace
+import com.duvalhub.continuousdeploymenttest.trace.Trace
 
 /* 
 ) Clone hello-app on branch develop
