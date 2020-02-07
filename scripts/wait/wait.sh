@@ -13,8 +13,8 @@ do
       exit 1
     fi
 
-    echo "Curling '$URL'"
-    result=$(curl -s $URL)
+    echo "Curling '$DEPLOYMENT_URL'"
+    result=$(curl -s $DEPLOYMENT_URL)
 
     if [ "$result" == "$expected" ]; then
         echo "Result found '$expected'"

@@ -22,6 +22,7 @@ node() {
     ).trim()
 
     Trace trace = new Trace(uuid)
+    trace.url = "https://hello-world.cicd-test.dev.philippeduval.ca"
 
     withCredentials([
         usernamePassword(
@@ -41,7 +42,7 @@ node() {
     }
 
     launchBuild(trace)
-    
+
     checkState(trace)
 
     String cli_script = ""

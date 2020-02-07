@@ -5,8 +5,7 @@ def call(Trace trace) {
     withEnv([
         "JENKINS_CLI_JAR_PATH=${env.BASE_DIR}/lib/jenkins-cli.jar",
         "APP_BRANCH=develop",
-        "STRING_TO_SEARCH=${trace.getStringToSearch()}",
-        "DEPLOYMENT_URL=http://hello-world.cicd-test.dev.philippeduval.ca"
+        "STRING_TO_SEARCH=${trace.getStringToSearch()}"
     ]){
         // executeScript(script)
 
