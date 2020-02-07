@@ -2,6 +2,8 @@
 @Library(['test-library@feature/base', 'shared-library@feature/multiple-env']) _
 
 import com.duvalhub.gitclone.GitCloneRequest
+import com.duvalhub.continuousdeploymenttest.Trace
+
 /* 
 ) Clone hello-app on branch develop
 ) Edit file and commit
@@ -13,9 +15,13 @@ import com.duvalhub.gitclone.GitCloneRequest
 node() {
     checkout scm
     env.BASE_DIR = pwd()
-
     echo "BASE DIR: '${env.BASE_DIR}'"
-    sh "ls -l"
+    String uuid = sh(
+        script: 'uuidgen',
+        returnStdout: true
+    )
+
+    Trace trace = new Trace(uuid)
 
     withCredentials([
         usernamePassword(
@@ -30,11 +36,11 @@ node() {
         gitClone(gitCloneRequest)
 
         dir(gitCloneRequest.directory) {
-            editFile()
+            editFile(trace)
         }
     }
 
-    checkState()
+    checkState(trace)
 
     String cli_script = ""
 

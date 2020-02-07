@@ -1,4 +1,12 @@
-def call() {
+import com.duvalhub.continuousdeploymenttest.Trace
+
+def call(Trace trace) {
     String script = "${env.BASE_DIR}/scripts/editFile/editFile.sh"
-    executeScript(script)
+    withEnv([
+        "PLACE_HOLDER=${trace.place_holder}",
+        "UUID=${trace.uuid}",
+        "FILE_TO_EDIT=${trace.file_to_edit}"
+    ]){
+        executeScript(script)
+    }
 }
