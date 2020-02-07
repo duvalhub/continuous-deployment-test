@@ -19,7 +19,7 @@ node() {
     String uuid = sh(
         script: 'uuidgen',
         returnStdout: true
-    )
+    ).trim()
 
     Trace trace = new Trace(uuid)
 
@@ -40,6 +40,8 @@ node() {
         }
     }
 
+    launchBuild(trace)
+    
     checkState(trace)
 
     String cli_script = ""
