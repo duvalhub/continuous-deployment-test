@@ -5,7 +5,7 @@ class Trace {
     String uuid
     String file_to_edit = "src/App.js"
 
-    Trace(String uuid {
+    Trace(String uuid) {
         this.uuid = uuid
     }
 
