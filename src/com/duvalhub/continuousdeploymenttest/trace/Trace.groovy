@@ -1,4 +1,4 @@
-package com.duvalhub.continuousdeploymenttest
+package com.duvalhub.continuousdeploymenttest.trace
 
 class Trace {
     String place_holder = "####"
