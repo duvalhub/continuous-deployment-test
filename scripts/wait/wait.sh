@@ -13,6 +13,7 @@ do
       exit 1
     fi
 
+    echo "Curling '$URL'"
     result=$(curl -s $URL)
 
     if [ "$result" == "$expected" ]; then
