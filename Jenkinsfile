@@ -29,7 +29,7 @@ node() {
 
     initializeWorkdir(new InitializeWorkdirIn(trace.getGitUrl()))
 
-    AppConfig appConfig = readConfig()
+    AppConfig appConfig = readConfiguration()
     
 
     validateEnvironment(trace)
