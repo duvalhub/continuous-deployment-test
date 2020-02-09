@@ -1,5 +1,5 @@
-package com.duvalhub.continuousdeploymenttest
+package com.duvalhub.continuousdeploymenttest.release
 
 class Release {
-    
+
 }
