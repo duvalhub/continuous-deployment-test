@@ -14,38 +14,24 @@ import com.duvalhub.continuousdeploymenttest.trace.Trace
 // dockerSlave() {
 node() {
     checkout scm
-    env.BASE_DIR = pwd()
-    echo "BASE DIR: '${env.BASE_DIR}'"
+    
     String uuid = sh(
         script: 'uuidgen',
         returnStdout: true
     ).trim()
-
     Trace trace = new Trace(uuid)
     trace.url = "https://hello-world.cicd-test.dev.philippeduval.ca"
 
-    withCredentials([
-        usernamePassword(
-            usernameVariable: 'USERNAME',
-            passwordVariable: 'PASSWORD',
-            credentialsId: 'GITHUB_SERVICE_ACCOUNT_CREDENTIALS'
-        )
-    ]) {
-        String url = "https://$USERNAME:$PASSWORD@github.com/duvalhub/continuous-deployment-test-app.git"
-        GitCloneRequest gitCloneRequest = new GitCloneRequest(url)
-        gitCloneRequest.toCheckout = "develop"
-        gitClone(gitCloneRequest)
 
-        dir(gitCloneRequest.directory) {
-            editFile(trace)
-        }
-    }
+    initializeWorkdir(new InitializeWorkdirIn(trace.getGitUrl()))
+    
+    AppConfig appConfig = readConfig()
+    
 
-    launchBuild(trace)
+    validateEnvironment(trace)
 
-    checkState(trace)
-
-    String cli_script = ""
+    Release release = new Release()
+    launchRelease(release)
 
 
 }
