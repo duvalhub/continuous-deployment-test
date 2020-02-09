@@ -1,7 +1,7 @@
 package com.duvalhub.continuousdeploymenttest.trace
 
 class Trace {
-    Sring git_url
+    String git_url
     String place_holder = "####"
     String uuid
     String file_to_edit = "src/index.html"
