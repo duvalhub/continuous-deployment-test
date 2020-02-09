@@ -19,4 +19,7 @@ class Trace {
         return String.format("https://%s:%s@github.com/duvalhub/continuous-deployment-test-app.git", username, password)
     }
 
+    String getGitUrl( ) {
+        return "git@github.com:duvalhub/continuous-deployment-test-app.git"
+    }
 }
