@@ -1,8 +1,9 @@
 import com.duvalhub.continuousdeploymenttest.trace.Trace
+import com.duvalhub.jenkins.LaunchBuild
 
 def call(Trace trace) {
     modifyGitRepo(trace)
-    launchBuild(trace.jenkins_build)
+    launchBuild(new LaunchBuild(trace.jenkins_build))
     checkState(trace)
 }
 
