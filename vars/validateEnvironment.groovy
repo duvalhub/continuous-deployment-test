@@ -3,7 +3,11 @@ import com.duvalhub.jenkins.LaunchBuild
 
 def call(Trace trace) {
     modifyGitRepo(trace)
-    LaunchBuild a = new LaunchBuild(trace.jenkins_build)
+    String[] names = trace.jenkins_build.split('/')
+    String name = names[0]
+    String job = names[1]
+    String version = names[2]
+    LaunchBuild a = new LaunchBuild(name, job, version)
     launchBuild(a)
     checkState(trace)
 }
