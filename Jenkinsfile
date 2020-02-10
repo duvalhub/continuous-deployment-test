@@ -1,7 +1,7 @@
 
 @Library(['test-library@feature/base', 'shared-library@feature/multiple-env']) _
 env.PIPELINE_BRANCH = "feature/multiple-env"
-import com.duvalhub.gitclone.GitCloneRequest
+import com.duvalhub.git.GitCloneRequest
 import com.duvalhub.appconfig.AppConfig
 import com.duvalhub.initializeworkdir.InitializeWorkdirIn
 
@@ -27,7 +27,7 @@ node() {
     trace.url = "https://hello-world.cicd-test.dev.philippeduval.ca"
 
 
-    initializeWorkdir(new InitializeWorkdirIn(trace.getGitUrl()))
+    initializeWorkdir(new InitializeWorkdirIn(trace.getGitRepo()))
 
     AppConfig appConfig = readConfiguration()
     
