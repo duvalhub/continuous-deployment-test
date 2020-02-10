@@ -9,7 +9,7 @@ def call(Trace trace) {
         )
     ]) {
         dir(trace.app_workdir) {    
-            withSsh() {
+            withSshKey() {
                 editFile(trace)
             }
         }
