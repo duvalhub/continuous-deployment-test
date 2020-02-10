@@ -4,7 +4,6 @@ import com.duvalhub.git.GitRepo
 
 class Trace {
     GitRepo gitRepo
-    String place_holder = "####"
     String uuid
     String file_to_edit = "src/index.html"
     String url
