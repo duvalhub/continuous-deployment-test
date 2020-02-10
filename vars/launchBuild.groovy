@@ -5,6 +5,7 @@ def call(LaunchBuild launchBuild) {
     String script = "${env.WORKSPACE}/scripts/launchJenkins/launchJenkins.sh"
     withJenkins() {
         env.JENKINS_JOB = launchBuild.getBuild()
+        env.JENKINS_PARAMS = ""
         executeScript(script)
     }
 }

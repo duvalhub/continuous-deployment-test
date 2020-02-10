@@ -3,7 +3,8 @@ import com.duvalhub.jenkins.LaunchBuild
 
 def call(Trace trace) {
     modifyGitRepo(trace)
-    launchBuild(new LaunchBuild(trace.jenkins_build))
+    LaunchBuild a = new LaunchBuild(trace.jenkins_build)
+    launchBuild(a)
     checkState(trace)
 }
 
