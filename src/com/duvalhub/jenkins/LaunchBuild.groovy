@@ -1,6 +1,7 @@
 package com.duvalhub.jenkins
+import com.duval.BaseObject
 
-class LaunchBuild {
+class LaunchBuild extends BaseObject {
     String name
     String job
     String version
