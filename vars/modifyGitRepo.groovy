@@ -1,3 +1,5 @@
+import com.duvalhub.continuousdeploymenttest.trace.Trace
+
 def call(Trace trace) {
      withCredentials([
         usernamePassword(
