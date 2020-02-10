@@ -1,5 +1,5 @@
 package com.duvalhub.jenkins
-import com.duval.BaseObject
+import com.duvalhub.BaseObject
 
 class LaunchBuild extends BaseObject {
     String name
