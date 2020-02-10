@@ -1,10 +1,11 @@
 import com.duvalhub.continuousdeploymenttest.trace.Trace
+import com.duvalhub.jenkins.LaunchBuild
 
-def call(String jenkins_job) {
+def call(LaunchBuild launchBuild) {
     String script = "${env.WORKSPACE}/scripts/launchJenkins/launchJenkins.sh"
     withJenkins() {
         withEnv([
-            "JENKINS_JOB=$jenkins_job"
+            "JENKINS_JOB=${launchBuild.getBuild}"
         ]){
             executeScript(script)
         }
