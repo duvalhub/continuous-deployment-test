@@ -33,7 +33,7 @@ node() {
     AppConfig appConfig = readConfiguration()
     
 
-    validateEnvironment(trace)
+    //validateEnvironment(trace)
 
     Release release = new Release()
     launchRelease(release)
