@@ -4,6 +4,7 @@ class LaunchBuild {
     String name
     String job
     String version
+    String[] params
 
     LaunchBuild(String name, String job, String version) {
         this.name = name
