@@ -1,6 +1,6 @@
 import com.duvalhub.continuousdeploymenttest.trace.Trace
 
-def call(String jenkins_job = "continuous-deployment-pipelines/continuous-deployment-test-app/develop") {
+def call(String jenkins_job) {
     String script = "${env.WORKSPACE}/scripts/launchJenkins/launchJenkins.sh"
     withJenkins() {
         withEnv([

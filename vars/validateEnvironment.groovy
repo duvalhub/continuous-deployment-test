@@ -2,7 +2,7 @@ import com.duvalhub.continuousdeploymenttest.trace.Trace
 
 def call(Trace trace) {
     modifyGitRepo(trace)
-    launchBuild(trace)
+    launchBuild(trace.jenkins_build)
     checkState(trace)
 }
 
