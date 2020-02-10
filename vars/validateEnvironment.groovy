@@ -1,6 +1,7 @@
+import com.duvalhub.continuousdeploymenttest.trace.Trace
 
 def call(Trace trace) {
-    testDevelopmentEnvironment.stage(trace)
+    modifyGitRepo(trace)
     launchBuild(trace)
     checkState(trace)
 }

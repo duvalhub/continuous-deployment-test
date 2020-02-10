@@ -3,11 +3,12 @@ package com.duvalhub.continuousdeploymenttest.trace
 import com.duvalhub.git.GitRepo
 
 class Trace {
-    String git_url
+    GitRepo gitRepo
     String place_holder = "####"
     String uuid
     String file_to_edit = "src/index.html"
     String url
+    String app_workdir
 
     Trace(String uuid) {
         this.uuid = uuid

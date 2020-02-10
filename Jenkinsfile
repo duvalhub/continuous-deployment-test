@@ -28,7 +28,8 @@ node() {
 
 
     initializeWorkdir(new InitializeWorkdirIn(trace.getGitRepo()))
-
+    trace.app_workdir = env.APP_WORKDIR
+    
     AppConfig appConfig = readConfiguration()
     
 
