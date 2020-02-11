@@ -14,7 +14,7 @@ do
     fi
 
     echo "Curling '$DEPLOYMENT_URL'"
-    result=$(curl -s $DEPLOYMENT_URL)
+    result=$(curl -L -s $DEPLOYMENT_URL)
 
     if [ "$result" == "$expected" ]; then
         echo "Result found '$expected'"

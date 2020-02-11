@@ -13,6 +13,6 @@ def call(JenkinsBuild jenkinsBuild) {
         env.JENKINS_JOB = jenkinsBuild.getBuild()
         env.JENKINS_PARAMS = params_string
         echo "Launching Jenkins Job: '${env.JENKINS_JOB}' with params: '${env.JENKINS_PARAMS}'"
-        echo executeScript(script)
+        executeScript(script)
     }
 }   
