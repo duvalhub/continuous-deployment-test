@@ -30,7 +30,6 @@ node() {
     initializeWorkdir(new InitializeWorkdirIn(trace.getGitRepo()))
     trace.app_workdir = env.APP_WORKDIR
 
-/*
     modifyGitRepo(trace)
     
     AppConfig appConfig = readConfiguration()
@@ -40,15 +39,14 @@ node() {
 
     Release release = new Release()
     launchRelease(trace)
-*/
+
     String release_branch = determineReleaseBranch(trace)
     echo "Relase branch found: '$release_branch'"
-/*
+
     echo "Validating STAGE environment"
     JenkinsBuild jenkinsBuild = trace.jenkinsBuild
     jenkinsBuild.branch = release_branch
     validateEnvironment(trace)
-*/
 
 
 }
