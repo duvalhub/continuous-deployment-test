@@ -12,6 +12,6 @@ def call(JenkinsBuild jenkinsBuild) {
         }
         env.JENKINS_JOB = jenkinsBuild.getBuild()
         env.JENKINS_PARAMS = params_string
-        executeScript(script)
+        echo executeScript(script)
     }
 }

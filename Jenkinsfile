@@ -37,13 +37,12 @@ node() {
     AppConfig appConfig = readConfiguration()
     
     echo "Validating DEV environment"
-    validateEnvironment(trace)
+    //validateEnvironment(trace)
 
-    Release release = new Release()
-    launchRelease(trace)
+    //launchRelease(trace)
 
     String release_branch = determineReleaseBranch(trace)
-    echo "Relase branch found: '$release_branch'"
+    echo "Release branch found: '$release_branch'"
 
     echo "Validating STAGE environment"
     JenkinsBuild jenkinsBuild = trace.jenkinsBuild

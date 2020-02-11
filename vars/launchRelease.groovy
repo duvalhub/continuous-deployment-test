@@ -5,9 +5,4 @@ import com.duvalhub.continuousdeploymenttest.trace.Trace
 def call (Trace trace) {
     JenkinsBuild launchRelease = new JenkinsBuild("continuous-deployment-pipelines", "continuous-deployment-release", "feature%2Ffirst-draft")
     launchBuild(launchRelease)
-
-    JenkinsBuild launchReleaseBuild = trace.jenkinsBuild
-    launchReleaseBuild.branch = ""
-
-
 }
