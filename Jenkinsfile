@@ -7,6 +7,8 @@ import com.duvalhub.initializeworkdir.InitializeWorkdirIn
 
 import com.duvalhub.continuousdeploymenttest.trace.Trace
 import com.duvalhub.continuousdeploymenttest.release.Release
+import com.duvalhub.jenkins.JenkinsBuild
+
 
 /* 
 ) Clone hello-app on branch develop
