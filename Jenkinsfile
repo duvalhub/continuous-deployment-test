@@ -46,7 +46,8 @@ node() {
 
     echo "Validating STAGE environment"
     JenkinsBuild jenkinsBuild = trace.jenkinsBuild
-    jenkinsBuild.branch = release_branch
+    jenkinsBuild.version = release_branch
+    trace.url = "https://hello-world.cicd-test.stage.philippeduval.ca"
     validateEnvironment(trace)
 
 
