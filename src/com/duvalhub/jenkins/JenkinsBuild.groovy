@@ -15,6 +15,10 @@ class JenkinsBuild extends BaseObject {
 
 
     String getBuild() {
-        return String.format("%s/%s/%s", this.name, this.job, this.version)
+        return String.format("%s/%s/%s", normalize(this.name), normalize(this.job), normalize(this.version))
+    }
+
+    private String normalize(String str) {
+        return str.replaceAll("/", "%2F")
     }
 }
