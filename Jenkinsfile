@@ -28,8 +28,6 @@ node() {
         returnStdout: true
     ).trim()
     Trace trace = new Trace(uuid)
-    trace.url = "https://hello-world.cicd-test.dev.philippeduval.ca"
-
 
     initializeWorkdir(new InitializeWorkdirIn(trace.getGitRepo()))
     trace.app_workdir = env.APP_WORKDIR
@@ -39,7 +37,7 @@ node() {
     AppConfig appConfig = readConfiguration()
     Platforms platforms = appConfig.deploy.platforms
     
-    echo "Validating DEV environment"
+    echo "Validating DEV environment..."
     trace.platform = platforms.dev
     validateEnvironment(trace)
 
@@ -48,7 +46,7 @@ node() {
     String release_branch = determineReleaseBranch(trace)
     echo "Release branch found: '$release_branch'"
 
-    echo "Validating STAGE environment"
+    echo "Validating STAGE environment..."
     JenkinsBuild jenkinsBuild = trace.jenkinsBuild
     jenkinsBuild.version = release_branch
     trace.platform = platforms.stage
