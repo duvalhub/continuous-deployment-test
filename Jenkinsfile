@@ -3,6 +3,8 @@
 env.PIPELINE_BRANCH = "feature/multiple-env"
 import com.duvalhub.git.GitCloneRequest
 import com.duvalhub.appconfig.AppConfig
+import com.duvalhub.appconfig.Platforms
+
 import com.duvalhub.initializeworkdir.InitializeWorkdirIn
 
 import com.duvalhub.continuousdeploymenttest.trace.Trace
@@ -35,11 +37,13 @@ node() {
     modifyGitRepo(trace)
     
     AppConfig appConfig = readConfiguration()
+    Platforms platforms = appConfig.deploy.platforms
     
     echo "Validating DEV environment"
-    //validateEnvironment(trace)
+    trace.platform = platforms.dev
+    validateEnvironment(trace)
 
-    //launchRelease(trace)
+    launchRelease(trace)
 
     String release_branch = determineReleaseBranch(trace)
     echo "Release branch found: '$release_branch'"
@@ -47,7 +51,7 @@ node() {
     echo "Validating STAGE environment"
     JenkinsBuild jenkinsBuild = trace.jenkinsBuild
     jenkinsBuild.version = release_branch
-    trace.url = "https://hello-world.cicd-test.stage.philippeduval.ca"
+    trace.platform = platforms.stage
     validateEnvironment(trace)
 
 
