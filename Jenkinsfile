@@ -41,6 +41,7 @@ node() {
     trace.platform = platforms.dev
     validateEnvironment(trace)
 
+    echo "Launching Release Pipeline"
     launchRelease(trace)
 
     String release_branch = determineReleaseBranch(trace)
@@ -52,5 +53,7 @@ node() {
     trace.platform = platforms.stage
     validateEnvironment(trace)
 
+    echo "Launching Production Pipeline"
+    launchProduction(trace)
 
 }
