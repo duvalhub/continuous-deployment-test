@@ -27,8 +27,4 @@ class Trace {
     GitRepo getGitRepo( ) {
         return new GitRepo("duvalhub", "continuous-deployment-test-app")
     }
-
-    JenkinsBuild getJenkinsBuild(String flow_type) {
-        jenkinsBuild.
-    }
 }
