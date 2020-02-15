@@ -60,3 +60,4 @@ node() {
     jenkinsBuild.version = "master"
     trace.platform = platforms.prod
     validateEnvironment(trace)
+}
