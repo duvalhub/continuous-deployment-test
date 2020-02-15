@@ -57,8 +57,6 @@ node() {
     launchProduction(trace)
 
     echo "Validating PROD environment..."
-    JenkinsBuild jenkinsBuild = trace.jenkinsBuild
-    jenkinsBuild.version = "master"
     trace.platform = platforms.prod
     validateEnvironment(trace)
 }
