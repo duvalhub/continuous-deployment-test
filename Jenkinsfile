@@ -10,8 +10,8 @@ node() {
         ])
     ])
     checkout scm
-    int max_repetion = params.REPETITIONS.toInteger() + 1
-    for (int i = 1; i < max_repetion; i++) {
+    int max_repetion = params.REPETITIONS.toInteger()
+    for (int i = 1; i <= max_repetion; i++) {
         echo "########## Running test #$i/$max_repetion"
         runTest()
     }
