@@ -14,6 +14,7 @@ def call() {
         script: 'uuidgen',
         returnStdout: true
     ).trim()
+    echo "### Running pipeline test with UUID: '$uuid'"
     Trace trace = new Trace(uuid)
 
     initializeWorkdir(new InitializeWorkdirIn(trace.getGitRepo()))
