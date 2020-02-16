@@ -13,7 +13,7 @@ do
       exit 1
     fi
 
-    echo "Curling '$DEPLOYMENT_URL'"
+    echo "Curling '$DEPLOYMENT_URL'. Expecting '$expected'"
     result=$(curl -m 5 -L -s $DEPLOYMENT_URL)
 
     if [ "$result" == "$expected" ]; then
