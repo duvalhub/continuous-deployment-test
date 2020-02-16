@@ -13,7 +13,7 @@ while true; do
   fi
 
   set +e
-  curl "$JENKINS_JOB_HTTP/api/json"
+  curl "$JENKINS_URL/$JENKINS_JOB_HTTP/api/json"
   build_error_code=$(echo $?)
   set -e
   if (( $build_error_code == 0)); then
