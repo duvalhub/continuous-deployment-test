@@ -14,6 +14,8 @@ node() {
     library "shared-library@${params.PIPELINE_VERSION}"
     env.PIPELINE_BRANCH = params.PIPELINE_VERSION
 
+    wut()
+    return
     checkout scm
 
     int max_repetion = params.REPETITIONS.toInteger()
