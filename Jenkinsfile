@@ -12,6 +12,7 @@ node() {
     ])
     echo "Branch name is : ${env.BRANCH_NAME}"
     sh "exit 0"
+    return
     library "test-library@${env.BRANCH_NAME}"
     library "shared-library@${params.PIPELINE_VERSION}"
     env.PIPELINE_BRANCH = params.PIPELINE_VERSION
