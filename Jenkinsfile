@@ -10,12 +10,10 @@ node() {
             string(defaultValue: 'master', name: 'PIPELINE_VERSION')
         ])
     ])
-    echo "Branch name is : ${env.BRANCH_NAME}"
     library "test-library@${env.BRANCH_NAME}"
     library "shared-library@${params.PIPELINE_VERSION}"
     env.PIPELINE_BRANCH = params.PIPELINE_VERSION
-    sh "exit 0"
-    return
+
     checkout scm
 
     int max_repetion = params.REPETITIONS.toInteger()
