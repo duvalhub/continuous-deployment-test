@@ -7,9 +7,16 @@ node() {
     properties([
         parameters([
             string(defaultValue: '1', name: 'REPETITIONS'),
+            string(defaultValue: 'master', name: 'PIPELINE_VERSION')
         ])
     ])
+    echo "Branch name is : ${env.BRANCH_NAME}"
+    sh "exit 0"
+    library "test-library@${env.BRANCH_NAME}"
+    library "shared-library@${params.PIPELINE_VERSION}"
+    env.PIPELINE_BRANCH = params.PIPELINE_VERSION
     checkout scm
+
     int max_repetion = params.REPETITIONS.toInteger()
     for (int i = 1; i <= max_repetion; i++) {
         echo "########## Running test #$i/$max_repetion"

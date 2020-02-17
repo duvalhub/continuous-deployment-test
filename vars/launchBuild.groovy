@@ -11,7 +11,6 @@ def call(JenkinsBuild jenkinsBuild) {
             params_string += String.format("-p %s ", param)
         }
         env.JENKINS_JOB = jenkinsBuild.getBuild()
-        env.JENKINS_JOB_HTTP = jenkinsBuild.getBuildHttp()
         env.JENKINS_PARAMS = params_string
         echo "Launching Jenkins Job: '${env.JENKINS_JOB}' with params: '${env.JENKINS_PARAMS}'"
         executeScript(script)

@@ -19,10 +19,8 @@ while true; do
 
   jenkins_job_api="$JENKINS_URL/$JENKINS_JOB_HTTP/api/json"
   echo "Looking for job '$JENKINS_JOB' using Jenkins CLI."
-  #echo "Looking for job '$JENKINS_JOB_HTTP'. Curling '$jenkins_job_api'"
   set +e
   jenkins get-job "$JENKINS_JOB" > /dev/null
-  #curl -s -u "$JENKINS_USER_ID:$JENKINS_API_TOKEN" "$jenkins_job_api" > /dev/null
   build_error_code=$(echo $?)
   set -e
   if (( $build_error_code == 0)); then
