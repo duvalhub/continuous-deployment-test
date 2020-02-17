@@ -1,8 +1,7 @@
-echo "wut wut ?"
-import com.duvalhub.continuousdeploymenttest.trace.Trace
-@Library('shared-library')
-import com.duvalhub.appconfig.Platforms
+//echo "wut wut ?"
+//@Library('shared-library')
 
 def call () {
+    import com.duvalhub.appconfig.Platforms
     echo "uh"
 }
