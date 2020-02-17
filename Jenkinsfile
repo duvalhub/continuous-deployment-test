@@ -15,4 +15,6 @@ node() {
         echo "########## Running test #$i/$max_repetion"
         runTest()
     }
+
+    echo "All $max_repetion Tests are successful!"
 }
