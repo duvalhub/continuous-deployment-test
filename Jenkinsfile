@@ -1,4 +1,4 @@
-@Library(['test-library@master', 'shared-library@master']) _
+@Library(['test-library@fix/import-failures', 'shared-library@master']) _
 env.PIPELINE_BRANCH = "master"
 
 // dockerSlave() {
