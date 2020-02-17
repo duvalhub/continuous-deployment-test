@@ -1,3 +1,4 @@
+@Library('shared-library')
 import com.duvalhub.continuousdeploymenttest.trace.Trace
 
 def call () {
