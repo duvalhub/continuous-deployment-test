@@ -1,4 +1,12 @@
 #!/bin/bash
+###############
+# Prepare Jenkins
+###############
+
+
+###############
+# Generate UUID
+###############
 file_to_edit="$FILE_TO_EDIT"
 uuid="$UUID"
 echo -n "$uuid" > $file_to_edit
