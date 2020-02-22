@@ -1,4 +1,4 @@
-@Library(['test-library@master', 'shared-library@feature/builder-version']) _
+@Library(['test-library@test/feature/builder-version', 'shared-library@feature/builder-version']) _
 env.PIPELINE_BRANCH = "feature/builder-version"
 env.RELEASE_PIPELINE_VERSION = "master"
 
