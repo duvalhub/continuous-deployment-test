@@ -1,5 +1,5 @@
-@Library(['test-library@test/feature/builder-version', 'shared-library@feature/builder-version']) _
-env.PIPELINE_BRANCH = "feature/builder-version"
+@Library(['test-library@master', 'shared-library@master']) _
+env.PIPELINE_BRANCH = "master"
 env.RELEASE_PIPELINE_VERSION = "master"
 
 // dockerSlave() {
