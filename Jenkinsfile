@@ -6,7 +6,7 @@ node() {
     properties([
         parameters([
             string(defaultValue: '1', name: 'REPETITIONS'),
-            string(defaultValue: 'master', name: 'PIPELINE_VERSION')
+//            string(defaultValue: 'master', name: 'PIPELINE_VERSION')
         ])
     ])
 //    library "test-library@${env.BRANCH_NAME}"
