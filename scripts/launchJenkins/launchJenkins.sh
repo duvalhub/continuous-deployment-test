@@ -26,7 +26,7 @@ while true; do
   if (( $build_error_code == 0)); then
     echo "Launching job '$JENKINS_JOB'"
     sleep 5
-    jenkins build -s "$JENKINS_JOB" $( if [ ! -z "$JENKINS_PARAMS" ]; then echo -n "$JENKINS_PARAMS"; fi )
+    jenkins build -v -s "$JENKINS_JOB" $( if [ ! -z "$JENKINS_PARAMS" ]; then echo -n "$JENKINS_PARAMS"; fi )
     exit 0
   else 
     echo "Job not found. Tried #$((attempt_counter+1))/$max_attempts . Sleeping for $sleep_time second."
